@@ -7,13 +7,15 @@ var playerClick;
 
 
 // window.onload = function() {
+// 	$("#submitButton").hide();
 // 	$("#main-content").hide();
 // 	$("#score-container").hide();
 // };
 
 
-// $("#start-game").click(function() {
+// $("#start-game").on("click", function() {
 // 	$("#main-content").show();
+// 	$("#submitButton").show();
 // 	$("#start-game").hide();
 // 	timerInterval = setInterval(countDown, 1000);
 // 	countDown();
@@ -26,37 +28,55 @@ var playerClick;
 // 	if (timer === 0) {
 // 		stopTimer();
 // 		$("#main-content").hide();
+// 		$("#submitButton").hide();
 // 		$("#score-container").show();
 // 		$("#timeUpOrDone").html("Time is up!");
 // 	}
 // }
 
-
-
-
-// do I need this since the div will be hidden anyway?
-function stopTimer(){
-	clearInterval(timerInterval);
-}
+// function stopTimer(){
+// 	clearInterval(timerInterval);
+// }
 
 
 
 
 // Starting here is where I'm running into a problem
 
-var answerOne = $('#a1').prop('checked');
+// var answerOne = $('#a1').prop('checked');
+// var wrongOne = $('.wrongClass1').prop('checked');
 
-function questionOne() {
-	if (answerOne = true) {
+
+ // use .each
+
+$("#submitButton").on("click", function() {
+	var answerOne = $('#a1').prop('checked');
+	var wrongOne = $('.wrongClass1').prop('checked');
+
+	if (answerOne === true) {
 		correct++;
 		$("#correct-integer").html(correct);
+
 	}
-	else {
+	else if (wrongOne === true) {
 		incorrect++;
-		$("#incorrect-integer").html(correct);
+		$("#incorrect-integer").html(incorrect);
 	}
-}
-questionOne();
+
+});
+
+
+// $("#a1").on("click", function() {
+// 		if (answerOne === true) {
+// 			correct++;
+// 			$("#correct-integer").html(correct);
+// 		}
+// 		else {
+// 			incorrect++;
+// 			$("#incorrect-integer").html(incorrect);
+// 		}
+// 	});
+
 
 
 
