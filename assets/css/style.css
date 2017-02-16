@@ -1,0 +1,35 @@
+* {
+	margin: 0 auto;
+}
+
+body {
+	background-image: url("../images/Diablo2.png");
+	background-repeat: no-repeat;
+	background-size: 1940px 1080px;
+}
+
+#wrapper {
+	background-image: url("../images/burried.png");
+	width: 768px;
+	background-color: yellow;
+	text-align: center;
+	color: white;
+}
+
+#main-header {
+	font-size: 45px;
+}
+
+#timer {
+	font-size: 35px;
+}
+
+p {
+	font-size: 25px;
+}
+
+input {
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+}
