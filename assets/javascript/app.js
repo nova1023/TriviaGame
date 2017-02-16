@@ -1,39 +1,39 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var timer = 30;
+var timer = 60;
 var timerInterval;
 
-// window.onload = function() {
-// 	$("#submitButton").hide();
-// 	$("#main-content").hide();
-// 	$("#score-container").hide();
-// };
+window.onload = function() {
+	$("#submitButton").hide();
+	$("#main-content").hide();
+	$("#score-container").hide();
+};
 
-// $("#start-game").on("click", function() {
-// 	$("#main-content").show();
-// 	$("#submitButton").show();
-// 	$("#start-game").hide();
-// 	timerInterval = setInterval(countDown, 1000);
-// 	countDown();
-// });
+$("#start-game").on("click", function() {
+	$("#main-content").show();
+	$("#submitButton").show();
+	$("#start-game").hide();
+	timerInterval = setInterval(countDown, 1000);
+	countDown();
+});
 
-// function countDown(){
-// 	timer--;
-// 	$("#timer-integer").html(timer);
-// 	if (timer === 0) {
-// 		stopTimer();
-// 		$("#main-content").hide();
-// 		$("#submitButton").hide();
-// 		$("#score-container").show();
-// 		$("#timeUpOrDone").html("Time is up!");
-// 		notAnswered();
-// 	}
-// }
+function countDown(){
+	timer--;
+	$("#timer-integer").html(timer);
+	if (timer === 0) {
+		stopTimer();
+		$("#main-content").hide();
+		$("#submitButton").hide();
+		$("#score-container").show();
+		$("#timeUpOrDone").html("Time is up!");
+		notAnswered();
+	}
+}
 
-// function stopTimer(){
-// 	clearInterval(timerInterval);
-// }
+function stopTimer(){
+	clearInterval(timerInterval);
+}
 
 //When you click on Submit, checks if each question was answered
 
