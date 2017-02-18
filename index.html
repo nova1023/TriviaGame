@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Diablo 2 Trivia</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Amarante" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,54 +21,55 @@
 			
 			<h1 id="timer">Time remaining: <span id="timer-integer"></span></h1>
 			<br>
+			<br>
 
 			<form>
 				<p>What item lets you combine other items into a new item?</p>
 					<br>
 					<input type="radio" name="choices" class="class1" id="answer1"> <span>Horadric Cube</span>
-					<input type="radio" name="choices" class="class1" id="a2"> <span>Wirt's Leg</span>
-					<input type="radio" name="choices" class="class1" id="a3"> <span>Viper Amulet</span>
-					<input type="radio" name="choices" class="class1" id="a4"> <span>Staff of Kings</span>
+					<input type="radio" name="choices" class="class1" class="wrong1" id="a2"> <span>Wirt's Leg</span>
+					<input type="radio" name="choices" class="class1" class="wrong1"> <span>Viper Amulet</span>
+					<input type="radio" name="choices" class="class1" class="wrong1"> <span>Staff of Kings</span>
 			</form>
 			<br>
 			
 			<form>
-				<p>Question 2</p>
+				<p>Which NPC is known for the saying, "Stay a while and listen."?</p>
 					<br>
-					<input type="radio" name="choices" class="class2" id="b1"> <span>Choice 1</span>
-					<input type="radio" name="choices" class="class2" id="b2"> <span>Choice 2</span>
-					<input type="radio" name="choices" class="class2" id="answer2"> <span>Choice 3</span>
-					<input type="radio" name="choices" class="class2" id="b4"> <span>Choice 4</span>
+					<input type="radio" name="choices" class="class2" id="b1"> <span>Tyrael</span>
+					<input type="radio" name="choices" class="class2" id="b2"> <span>Akara</span>
+					<input type="radio" name="choices" class="class2" id="answer2"> <span>Deckard Cain</span>
+					<input type="radio" name="choices" class="class2" id="b4"> <span>Gheed</span>
 			</form>
 			<br>
 
 			<form>
-				<p>Question 3</p>
+				<p>Which of these classes is NOT an available option in Diablo 2?</p>
 					<br>
-					<input type="radio" name="choices" class="class3" id="c1"> <span>Choice 1</span>
-					<input type="radio" name="choices" class="class3" id="answer3"> <span>Choice 2</span>
-					<input type="radio" name="choices" class="class3" id="c3"> <span>Choice 3</span>
-					<input type="radio" name="choices" class="class3" id="c4"> <span>Choice 4</span>
+					<input type="radio" name="choices" class="class3" id="c1"> <span>Amazon</span>
+					<input type="radio" name="choices" class="class3" id="answer3"> <span>Occultist</span>
+					<input type="radio" name="choices" class="class3" id="c3"> <span>Druid</span>
+					<input type="radio" name="choices" class="class3" id="c4"> <span>Paladin</span>
 			</form>
 			<br>
 
 			<form>
-				<p>Question 4</p>
+				<p>Which item below was used more for trading purposes than an upgrade for your character's progression?</p>
 					<br>
-					<input type="radio" name="choices" class="class4" id="d1"> <span>Choice 1</span>
-					<input type="radio" name="choices" class="class4" id="d2"> <span>Choice 2</span>
-					<input type="radio" name="choices" class="class4" id="d3"> <span>Choice 3</span>
-					<input type="radio" name="choices" class="class4" id="answer4"> <span>Choice 4</span>
+					<input type="radio" name="choices" class="class4" id="d1"> <span>The Cat's Eye</span>
+					<input type="radio" name="choices" class="class4" id="d2"> <span>Nagelring</span>
+					<input type="radio" name="choices" class="class4" id="d3"> <span>Nokozan Relic</span>
+					<input type="radio" name="choices" class="class4" id="answer4"> <span>Stone of Jordan</span>
 			</form>
 			<br>
 
 			<form>
-				<p>Question 5</p>
+				<p>Which of the bosses listed below is the secret boss?</p>
 					<br>
-					<input type="radio" name="choices" class="class5" id="answer5"> <span>Choice 1</span>
-					<input type="radio" name="choices" class="class5" id="e2"> <span>Choice 2</span>
-					<input type="radio" name="choices" class="class5" id="e3"> <span>Choice 3</span>
-					<input type="radio" name="choices" class="class5" id="e4"> <span>Choice 4</span>
+					<input type="radio" name="choices" class="class5" id="answer5"> <span>The Cow King</span>
+					<input type="radio" name="choices" class="class5" id="e2"> <span>Duriel</span>
+					<input type="radio" name="choices" class="class5" id="e3"> <span>Pindleskin</span>
+					<input type="radio" name="choices" class="class5" id="e4"> <span>Griswold</span>
 			</form>
 			<br>
 			
@@ -74,17 +77,21 @@
 		<br>
 		
 		<div id="button-container">
-			<button id="start-game">Click to start!</button>
+			<button id="start-game">Start Trivia!</button>
 			<button id="submitButton">Submit</button>
 		</div>
 		<br>
 
 		<div id="score-container">
-			<h1 id="timeUpOrDone"></h1>
+			<h1 id="done"></h1>
+			<h1 id="timeUp"></h1>
 			<br>
 			<p>Answered Correctly: <span id="correct-integer"></span></p>
+			<br>
 			<p>Answered Incorrectly: <span id="incorrect-integer"></span></p>
+			<br>
 			<p>Unanswered: <span id="unanswered-integer"></span></p>
+			<br>
 		</div>
 
 	</div>

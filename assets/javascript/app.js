@@ -4,12 +4,18 @@ var unanswered = 0;
 var timer = 60;
 var timerInterval;
 
+var audio = new Audio("assets/sounds/D2-Tristam.mp3");
+audio.play();
+audio.loop = true;
+audio.volume = 0.1;
+
 window.onload = function() {
 	$("#submitButton").hide();
 	$("#main-content").hide();
 	$("#score-container").hide();
 };
 
+// when you click 'Start Trivia' button...
 $("#start-game").on("click", function() {
 	$("#main-content").show();
 	$("#submitButton").show();
@@ -18,6 +24,7 @@ $("#start-game").on("click", function() {
 	countDown();
 });
 
+// function for timer counting down
 function countDown(){
 	timer--;
 	$("#timer-integer").html(timer);
@@ -26,7 +33,7 @@ function countDown(){
 		$("#main-content").hide();
 		$("#submitButton").hide();
 		$("#score-container").show();
-		$("#timeUpOrDone").html("Time is up!");
+		$("#timeUp").html("Time is up!");
 		notAnswered();
 	}
 }
@@ -41,11 +48,12 @@ $("#submitButton").on("click", function() {
 	$("#submitButton").hide();
 	$("#main-content").hide();
 	$("#score-container").show();
-	$("#timeUpOrDone").html("You beat the timer!");
+	$("#done").html("You beat the timer!");
 	stopTimer();
 
+	// question 1
 	var answerOne = $('#answer1').prop('checked');
-
+	
 	if (answerOne === true) {
 		correct++;
 		$("#correct-integer").html(correct);
@@ -53,7 +61,7 @@ $("#submitButton").on("click", function() {
 	else {
 		incorrect++;
 		$("#incorrect-integer").html(incorrect);
-		}
+	}
 
 	// question 2
 	var answerTwo = $('#answer2').prop('checked');
@@ -65,7 +73,7 @@ $("#submitButton").on("click", function() {
 	else {
 		incorrect++;
 		$("#incorrect-integer").html(incorrect);
-		}
+	}
 
 	// question 3
 	var answerThree = $('#answer3').prop('checked');
@@ -77,7 +85,7 @@ $("#submitButton").on("click", function() {
 	else {
 		incorrect++;
 		$("#incorrect-integer").html(incorrect);
-		}
+	}
 
 	//question 4
 	var answerFour = $('#answer4').prop('checked');
@@ -89,7 +97,7 @@ $("#submitButton").on("click", function() {
 	else {
 		incorrect++;
 		$("#incorrect-integer").html(incorrect);
-		}
+	}
 
 	//question 5
 	var answerFive = $('#answer5').prop('checked');
@@ -101,7 +109,7 @@ $("#submitButton").on("click", function() {
 	else {
 		incorrect++;
 		$("#incorrect-integer").html(incorrect);
-		}
+	}
 
 });	
 
@@ -142,3 +150,4 @@ function notAnswered() {
 		$("#unanswered-integer").html(unanswered);
 	}
 }
+
